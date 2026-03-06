@@ -28,7 +28,7 @@ QUIZ_PAGES = [
     {"title": "MATH 233", "url": "https://sakai.ug.edu.gh/portal/site/MATH-223-1-S1-2526/tool/4d3cad86-206e-49a6-9ac5-af1c111da079/jsf/index/mainIndex"},
     {"title": "DCIT 203", "url": "https://sakai.ug.edu.gh/portal/site/DCIT-203-1-S1-2526/tool/8d6a8e4a-0b8a-45da-8532-1f3f442fcfaa/jsf/index/mainIndex"},
     {"title": "DCIT 211", "url": "https://sakai.ug.edu.gh/portal/site/DCIT-211-1-S1-2526/tool/de8c3576-7bc2-4ffc-b69a-b40087140fbd/jsf/index/mainIndex"},
-    {"title": "DCIT 201", "url": "https://sakai.ug.edu.gh/portal/site/DCIT-211-1-S1-2526/tool/de8c3576-7bc2-4ffc-b69a-b40087140fbd/jsf/index/mainIndex"},
+    {"title": "DCIT 201", "url": "https://sakai.ug.edu.gh/portal/site/DCIT-201-1-S1-2526/tool/fb5150aa-059f-4c47-87eb-08f99c508a85/jsf/index/mainIndex"},
     {"title": "DCIT 207", "url": "https://sakai.ug.edu.gh/portal/site/DCIT-207-1-S1-2526/tool/e3b9d77f-eaa9-45ae-a40a-4214a54bfaef/jsf/index/mainIndex"},
 ]
 
