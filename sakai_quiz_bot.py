@@ -19,10 +19,10 @@ from dotenv import load_dotenv
 
 # Load credentials from .env file
 load_dotenv()
-LOGIN_URL    = "https://sakai.ug.edu.gh/portal/site/!gateway/tool/55840c0d-ea44-4827-84cb-5270d764ecf7"
-USERNAME     = os.getenv("USERNAME")
-PASSWORD     = os.getenv("PASSWORD")
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+LOGIN_URL        = "https://sakai.ug.edu.gh/portal/site/!gateway/tool/55840c0d-ea44-4827-84cb-5270d764ecf7"
+SAKAI_USERNAME   = os.getenv("SAKAI_USERNAME")   # renamed to avoid clash with OS USERNAME variable
+SAKAI_PASSWORD   = os.getenv("SAKAI_PASSWORD")   # renamed for consistency and safety
+GROQ_API_KEY     = os.getenv("GROQ_API_KEY")
 
 QUIZ_PAGES = [
     {"title": "MATH 233", "url": "https://sakai.ug.edu.gh/portal/site/MATH-223-1-S1-2526/tool/4d3cad86-206e-49a6-9ac5-af1c111da079/jsf/index/mainIndex"},
@@ -140,9 +140,9 @@ def login(driver, wait):
     pw  = driver.find_element(By.ID, "pw")
     eid.clear()
     pw.clear()
-    eid.send_keys(USERNAME)
+    eid.send_keys(SAKAI_USERNAME)
     time.sleep(random.uniform(0.3, 0.7))
-    pw.send_keys(PASSWORD)
+    pw.send_keys(SAKAI_PASSWORD)
     time.sleep(random.uniform(0.3, 0.7))
 
     clicked = False
@@ -214,7 +214,7 @@ def scrape_and_answer_block(driver, block, client):
         if not inputs:
             return False
 
-        # 
+        # Collect choices
         choices = []
         for inp in inputs:
             try:
@@ -519,10 +519,10 @@ def main():
     print("   Sakai Quiz Bot (Groq AI) — Starting")
     print("=" * 55)
 
-    if not USERNAME or not PASSWORD or not GROQ_API_KEY:
+    if not SAKAI_USERNAME or not SAKAI_PASSWORD or not GROQ_API_KEY:
         print("[!] Missing credentials! Make sure your .env file exists with:")
-        print("    USERNAME=your_id")
-        print("    PASSWORD=your_password")
+        print("    SAKAI_USERNAME=your_student_id")
+        print("    SAKAI_PASSWORD=your_password")
         print("    GROQ_API_KEY=your_key")
         return
 
